@@ -29,7 +29,7 @@ export async function POST(request){
     //use it for login api
   }else{
     // use it for signup
-    const restaurant = new restaurantSchema(payload)
+    const restaurant = new restaurantSchema.findOne({email:payload.email,password:payload.password})
      result = await restaurant.save();
   }
  
