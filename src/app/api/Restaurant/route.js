@@ -37,5 +37,3 @@ export async function POST(request){
   console.log(payload);
   return NextResponse.json({result,success:true})
 }
-
-// cmd
