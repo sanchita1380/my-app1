@@ -1,4 +1,4 @@
-'use client'
+"use client"
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 const RestaurantLogin = () => {
@@ -11,17 +11,24 @@ const RestaurantLogin = () => {
   const handleLogin = async ()=>{
     if (!email || !password){
       setError(true)
-      return false
+    return false
     }else{
       setError(false)
     }
     let response = await fetch("http://localhost:3000/api/Restaurant", {
-      method: 'POST',
+      method:'POST',
       body: JSON.stringify({ email, password, login: true })
     });
     response = await response.json();
-    if (response.success) {
-      alert("Login successful")
+   if (response.success) {
+      const {result}=response;
+     delete result.password;
+     alert("Login successful")
+      localStorage.setItem("restaurantUser",JSON.stringify(result))
+      router.push("/restaurant/dashboard");
+    
+   }else{
+      alert("Login failed")
     }
 
 
@@ -56,6 +63,7 @@ const RestaurantLogin = () => {
 
       </>
     )
+  
   }
 
 

@@ -1,8 +1,5 @@
-//const mongoose = require('mongoose')
-//mongoose.connect("connectionStr")
-//.then(()=>{
-   // console.log('mongodb connected')
-//})
+
+
 
 const {default:mongoose } = require("mongoose");
 

@@ -28,11 +28,11 @@ margin: 30px;
 table , th , td{
     border: 1px solid black ;
     border-collapse: collapse;
-    padding: 10px;
+    padding: 15px;
     
 }
 table td button{
-    margin: 5px;
+    margin: 10px;
 }
 table img {
     width: 80px;

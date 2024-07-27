@@ -1,8 +1,9 @@
-"use client"
+
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import RestaurantFooter from "./RestaurantFooter";
-const RestaurantSignup = ()=>{
+
+
+const RestaurantSignup =  ()=>{
     const [email,setEmail]=useState('');
     const [password,setPassword]=useState('');
     const [c_password,setC_Password]=useState('');
@@ -13,7 +14,7 @@ const RestaurantSignup = ()=>{
     const router = useRouter();
     const [error,setError]=useState(false);
     const [passwordError,setPasswordError]=useState(false)
-
+  
 
   const handleSignup=async()=>{
     if(password!==c_password){
@@ -37,12 +38,12 @@ const RestaurantSignup = ()=>{
 
    })
    response= await response.json();
-   consle.log(response);
-   if (response.success){
    console.log(response);
-   const {result} = response
-    delete result.password
-    localStorage.setItem("restaurantUser",JSON.stringify(result));
+  if (response.success){
+   console.log(response);
+   const {result} = response;
+    delete result.password;
+   localStorage.setItem("restaurantUser",JSON.stringify(result));
     router.push("/restaurant/dashboard");
   }
 }  
