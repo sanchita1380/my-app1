@@ -13,7 +13,7 @@ const RestaurantHeader = () => {
      if(!data && pathName == "/restaurant/dashboard") {
         router.push("/restaurant/dashboard")
   }else if(data && pathName == "/restaurant"){
-      router.push("/restaurant/dashboard");
+      router.push("restaurant");
  }else{
        setDetails(JSON.parse(data))
       }
