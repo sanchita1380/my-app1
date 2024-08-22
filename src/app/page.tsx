@@ -1,5 +1,5 @@
 "use client"
-import Image from "next/image";
+
 import CustomerHeader from "@/_components/CustomerHeader";
 import RestaurantFooter from "@/_components/RestaurantFooter";
 import { useEffect, useState } from "react";
